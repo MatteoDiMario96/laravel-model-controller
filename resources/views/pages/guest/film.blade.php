@@ -5,23 +5,31 @@
 @section('main-content')
     <main>
         <section>
-            <ul>
+            <ul class="d-flex justify-content-center flex-wrap">
                 @foreach ($movies as $movie )
-                    <li>
-                        <pre>
-                            {{$movie->id}} : {{$movie->title}}
-                            Titolo originale: {{$movie->original_title}}
-                            Nazionalità: {{$movie->nationality}}
-                            Data di uscita: {{$movie->date}}
-                            Voto Imdb: {{$movie->vote}}
-                        </pre>
+                    <li id="film_list">
+                        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-header">{{$movie->id}} </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{$movie->title}}</h5>
+                                <p class="card-text">
+                                    Nazionalità: {{$movie->nationality}}
+                                    Data di uscita: {{$movie->date}}
+                                    Voto Imdb: {{$movie->vote}}
+                                </p>
+                            </div>
+                        </div>
                     </li>
                 @endforeach
             </ul>
 
             <div>
-                <a href="{{route('guest-home')}}">Torna alla home we</a>
+                <a href="{{route('guest-home')}}">Torna alla home </a>
             </div>
         </section>
+
+
+
+
     </main>
 @endsection
