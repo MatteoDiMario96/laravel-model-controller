@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Guest\HomeController;
+use App\Http\Controllers\Guest\FilmController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.guest.home');
-});
+Route::get('/', [HomeController::class, 'view'])->name('guest-home');
+
+
+Route::get('/movies',[FilmController::class, 'index'])->name('guest-film-list');
