@@ -4,7 +4,7 @@
 
 @section('main-content')
     <main>
-        <section>
+        <section class="d-flex flex-column">
             <ul class="d-flex justify-content-center flex-wrap">
                 @foreach ($movies as $movie )
                     <li id="film_list">
@@ -24,7 +24,9 @@
             </ul>
 
             <div>
-                <a href="{{route('guest-home')}}">Torna alla home </a>
+                <button class="btn btn-dark">
+                    <a href="{{route('guest-home')}}">Torna alla home </a>
+                </button>
             </div>
         </section>
 
